@@ -1,0 +1,6 @@
+const progress=document.querySelector('.progress-fill');const back=document.querySelector('.back-to-top');
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;const p=h?scrollY/h*100:0;progress.style.width=p+'%';document.querySelector('.progress-bar').setAttribute('aria-valuenow',Math.round(p));back.dataset.visible=scrollY>600?'true':'false'}
+addEventListener('scroll',onScroll,{passive:true});onScroll();back.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const toggle=document.querySelector('.nav-toggle'),menu=document.querySelector('.mobile-nav');toggle.addEventListener('click',()=>{const open=menu.dataset.state==='open';menu.dataset.state=open?'closed':'open';toggle.setAttribute('aria-expanded',String(!open))});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.dataset.state='closed';toggle.setAttribute('aria-expanded','false')}));
+document.querySelector('#year').textContent=new Date().getFullYear();
