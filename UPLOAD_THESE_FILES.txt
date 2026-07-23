@@ -1,0 +1,14 @@
+UPLOAD ALL FILES IN THIS FOLDER TO THE ROOT OF YOUR GITHUB REPOSITORY.
+Do not upload the ZIP itself.
+The new image names contain -2026 so GitHub cannot reuse the old broken paths.
+Required files:
+index.html
+styles.css
+script.js
+README.md
+vmg-hero-2026.webp
+vmg-mobile-2026.webp
+product-magnozin-2026.webp
+product-welfusion-2026.webp
+product-extracard-2026.webp
+product-vigorzen-2026.webp
